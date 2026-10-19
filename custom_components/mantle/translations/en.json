@@ -1,0 +1,88 @@
+{
+  "config": {
+    "flow_title": "{url}",
+    "step": {
+      "user": {
+        "title": "Mantle Hub",
+        "description": "Address of the hub and a long-lived token (hub profile → access tokens). Events need a token of an admin account.",
+        "data": {
+          "url": "URL",
+          "token": "Token"
+        }
+      },
+      "reauth_confirm": {
+        "title": "New token",
+        "description": "The hub rejected the token. Create a new one in the hub profile.",
+        "data": {
+          "token": "Token"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "The hub rejected the token.",
+      "cannot_connect": "The hub cannot be reached.",
+      "invalid_url": "Enter an http:// or https:// URL."
+    },
+    "abort": {
+      "already_configured": "This hub is already set up.",
+      "invalid_url": "The hub announced an invalid URL.",
+      "reauth_successful": "The new token works."
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "online": {
+        "name": "Online"
+      },
+      "screen": {
+        "name": "Screen"
+      }
+    },
+    "sensor": {
+      "foreground_app": {
+        "name": "Foreground app"
+      },
+      "mantle_version": {
+        "name": "Mantle version"
+      },
+      "configuration": {
+        "name": "Configuration"
+      }
+    },
+    "button": {
+      "reload": {
+        "name": "Reload"
+      }
+    }
+  },
+  "services": {
+    "open_space": {
+      "name": "Open space",
+      "description": "Opens a space on a TV.",
+      "fields": {
+        "device_id": {
+          "name": "TV",
+          "description": "The Mantle TV."
+        },
+        "space": {
+          "name": "Space",
+          "description": "Id of the space, e.g. homelab."
+        }
+      }
+    },
+    "call_action": {
+      "name": "Call hub action",
+      "description": "Runs any action of the Mantle hub and returns its result.",
+      "fields": {
+        "action": {
+          "name": "Action",
+          "description": "Name of the hub action."
+        },
+        "data": {
+          "name": "Data",
+          "description": "Input of the action."
+        }
+      }
+    }
+  }
+}

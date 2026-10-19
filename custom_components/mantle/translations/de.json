@@ -1,0 +1,88 @@
+{
+  "config": {
+    "flow_title": "{url}",
+    "step": {
+      "user": {
+        "title": "Mantle Hub",
+        "description": "Adresse des Hubs und ein langlebiges Zugangstoken (im Hub unter Profil → Zugangstoken). Hub-Events gibt es nur mit dem Token eines Admin-Kontos.",
+        "data": {
+          "url": "Adresse",
+          "token": "Zugangstoken"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Neues Zugangstoken",
+        "description": "Der Hub lehnt das Token ab. Im Hub unter Profil ein neues anlegen.",
+        "data": {
+          "token": "Zugangstoken"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Der Hub lehnt das Token ab.",
+      "cannot_connect": "Der Hub ist nicht erreichbar.",
+      "invalid_url": "Bitte eine Adresse mit http:// oder https:// angeben."
+    },
+    "abort": {
+      "already_configured": "Dieser Hub ist schon eingerichtet.",
+      "invalid_url": "Der Hub hat eine ungültige Adresse angekündigt.",
+      "reauth_successful": "Das neue Token funktioniert."
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "online": {
+        "name": "Online"
+      },
+      "screen": {
+        "name": "Bildschirm"
+      }
+    },
+    "sensor": {
+      "foreground_app": {
+        "name": "App im Vordergrund"
+      },
+      "mantle_version": {
+        "name": "Mantle-Version"
+      },
+      "configuration": {
+        "name": "Konfiguration"
+      }
+    },
+    "button": {
+      "reload": {
+        "name": "Neu laden"
+      }
+    }
+  },
+  "services": {
+    "open_space": {
+      "name": "Space öffnen",
+      "description": "Öffnet einen Space auf einem Fernseher.",
+      "fields": {
+        "device_id": {
+          "name": "Fernseher",
+          "description": "Der Mantle-Fernseher."
+        },
+        "space": {
+          "name": "Space",
+          "description": "ID des Space, z. B. homelab."
+        }
+      }
+    },
+    "call_action": {
+      "name": "Hub-Aktion aufrufen",
+      "description": "Führt eine Aktion des Mantle Hubs aus und gibt ihr Ergebnis zurück.",
+      "fields": {
+        "action": {
+          "name": "Aktion",
+          "description": "Name der Hub-Aktion."
+        },
+        "data": {
+          "name": "Daten",
+          "description": "Eingabe der Aktion."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+open_space:
+  fields:
+    device_id:
+      required: true
+      selector:
+        device:
+          integration: mantle
+    space:
+      required: true
+      example: homelab
+      selector:
+        text:
+call_action:
+  fields:
+    action:
+      required: true
+      example: devices.command
+      selector:
+        text:
+    data:
+      required: false
+      example: '{"deviceId": "…", "name": "reload"}'
+      selector:
+        object:
